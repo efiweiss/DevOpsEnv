@@ -4,6 +4,12 @@
     yum: name=git state=latest
     become: yes
     become_method: sudo 
-  - name: clone from github
+  - name: clone spring-petclinic
     git: repo=https://github.com/efiweiss/spring-petclinic.git
          dest=~/petclinic
+  - name: clone setup (this file)
+    git: repo=https://github.com/efiweiss/DevOpsEnv.git
+         dest=~/DevOpsEnv
+  - name: download Maven Archive
+    get_url: url=http://apache.mivzakim.net/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+             dest=~/Archives
