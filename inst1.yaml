@@ -1,9 +1,0 @@
-- hosts: localhost
-  tasks:
-  - name: install git
-    yum: name=git state=latest
-    become: yes
-    become_method: sudo 
-  - name: clone from github
-    git: repo=https://github.com/efiweiss/spring-petclinic.git
-         dest=~/petclinic
